@@ -3,14 +3,16 @@ export const Quotes = [
     verse:
       "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
     verse_name: "Isaiah 41:10",
-    verse_number:"10"
+    verse_number:"10",
+    category: 'anxiety'
   },
 
   {
     verse:
       "Do not let your hearts be troubled. You believe in God; believe also in me.",
     verse_name: "John 14:1",
-    verse_number:"1"
+    verse_number:"1",
+    category: 'anxiety'
   },
 
   {

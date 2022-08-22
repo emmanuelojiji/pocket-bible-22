@@ -115,6 +115,13 @@ function App() {
           </div>
         </header>
 
+        <div className="category-pill-container">
+          <button className="category-pill">Fear</button>
+          <button className="category-pill">Category</button>
+          <button className="category-pill">Category</button>
+          <button className="category-pill">Category</button>
+        </div>
+
         <div className="quote-container">
           <Quote
             currentVerse={currentVerse}
