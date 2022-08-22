@@ -1,0 +1,77 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #121212;
+  height: 100vh;
+  /*background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../rain-gif.webp");*/
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.App-container {
+  height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+header {
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.radio-container {
+  color: white;
+
+  input {
+    margin-right: 5px;
+    margin-left: 10px;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.button-transparent {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 500px;
+  background: none;
+  color: grey;
+  font-size: 16px;
+  border: 1px solid grey;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: white;
+    border: solid 1px white;
+  }
+}
+
+.new-verse-button {
+  margin-right: 20px;
+}

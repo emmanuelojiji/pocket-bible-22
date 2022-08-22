@@ -1,0 +1,43 @@
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+
+}
+
+.verse{
+    font-size: 30px;
+  
+}
+
+.verse {
+  color: white;
+}
+
+.verse_2 {
+  color: white;
+  margin-top: 20px;
+}
+
+.verse-name {
+  color: white;
+  margin-top: 20px;
+}
+
+
+.verse_number{
+color:grey;
+font-size: 20px;
+margin-right: 10px;
+}
+
+.number-text-container{
+  display: flex;
+}
+
+.verse-container{
+  display: flex;
+  flex-direction: column;
+}
