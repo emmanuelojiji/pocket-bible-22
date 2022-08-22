@@ -6,13 +6,15 @@
   flex: 1;
 }
 
-.verse {
-  font-size: 30px;
-}
 
 .verse {
+  font-size: 30px;
   color: white;
   line-height: 1.5;
+
+  @media (max-width: 900px){
+    font-size:20px;
+  }
 }
 
 
