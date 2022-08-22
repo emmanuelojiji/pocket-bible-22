@@ -4,44 +4,47 @@
   align-items: flex-start;
   justify-content: center;
   flex: 1;
-
 }
 
-.verse{
-    font-size: 30px;
-  
+.verse {
+  font-size: 30px;
 }
 
 .verse {
   color: white;
+  line-height: 1.5;
 }
 
-.verse_2 {
-  color: white;
-  margin-top: 20px;
-}
 
 .verse-name {
   color: white;
-  margin-top: 20px;
+  margin-top: 30px;
   font-family: sans-serif;
   font-weight: 100;
   font-size: 18px;
+  color: grey;
 }
 
-
-.verse_number{
-color:grey;
-font-size: 15px;
-margin-right: 10px;
-font-family: sans-serif;
+.verse_number {
+  color: grey;
+  font-size: 15px;
+  margin-right: 10px;
+  font-family: sans-serif;
 }
 
-.number-text-container{
+.number-text-container {
   display: flex;
 }
 
-.verse-container{
+.verse-container {
   display: flex;
   flex-direction: column;
+}
+
+.verse-number-wrap {
+  display: flex;
+
+  &:nth-child(2) {
+    margin-top: 50px;
+  }
 }

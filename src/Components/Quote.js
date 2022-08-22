@@ -11,16 +11,22 @@ const Quote = ({
 }) => {
   return (
     <div class="number-text-container">
-      <span className="verse_number">{currentVerseNumber}</span>
-
+      
       <div className="verse-container">
-        <span className="verse">{currentVerse}</span>
+      <span className="verse-name verse">{currentVerseName}</span>
+        <div className="verse-number-wrap">
+          <span className="verse_number">{currentVerseNumber}</span>
+          <span className="verse">{currentVerse}</span>
+        </div>
 
         {currentVerse_2 && (
-          <span className="verse_2 verse">{currentVerse_2}</span>
+          <div className="verse-number-wrap">
+            <span className="verse_number">{currentVerseNumber}</span>
+            <span className="verse_2 verse">{currentVerse_2}</span>
+          </div>
         )}
 
-        <span className="verse-name verse">{currentVerseName}</span>
+       
       </div>
     </div>
   );
