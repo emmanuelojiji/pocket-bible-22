@@ -18,8 +18,8 @@ function App() {
   const [currentVerseName, setCurrentVerseName] = useState(randomVerseName);
   const [currentVerse, setCurrentVerse] = useState(randomVerse);
   const [currentVerse_2, setCurrentVerse_2] = useState(randomVerse_2);
-  const [currentVerseNumber, setCurrentVerseNumber] = useState(randomVerseNumber);
-  
+  const [currentVerseNumber, setCurrentVerseNumber] =
+    useState(randomVerseNumber);
 
   const getRandomVerse = () => {
     let randomIndex = Math.floor(Math.random() * Quotes.length);
@@ -133,10 +133,7 @@ function App() {
                 New verse
               </button>
 
-              <button
-                className="button-transparent"
-                onClick={copyVerse}
-              >
+              <button className="button-transparent" onClick={copyVerse}>
                 Copy verse
               </button>
             </div>
@@ -148,8 +145,6 @@ function App() {
               Share
             </button>
           </div>
-
-          
         </div>
         <footer>Built by Sugarcode</footer>
       </div>

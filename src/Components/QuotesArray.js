@@ -24,7 +24,7 @@ export const Quotes = [
     verse:
       "I sought the LORD, and he answered me; he delivered me from all my fears.",
     verse_name: "Psalms 34:4",
-    verse_number:"14"
+    verse_number:"4"
   },
   {
     verse:
