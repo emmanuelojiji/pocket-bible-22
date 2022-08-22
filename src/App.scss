@@ -70,11 +70,16 @@ footer {
     color: white;
     border: solid 1px white;
   }
+
+  @media (max-width: 900px){
+    font-size:14px;
+  }
 }
 
 .new-verse-button {
   margin-right: 20px;
 }
+
 
 footer{
   font-family: sans-serif;
