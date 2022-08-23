@@ -11,9 +11,8 @@ const Quote = ({
 }) => {
   return (
     <div class="number-text-container">
-      
       <div className="verse-container">
-      <span className="verse-name verse">{currentVerseName}</span>
+        <span className="verse-name verse">{currentVerseName}</span>
         <div className="verse-number-wrap">
           <span className="verse_number">{currentVerseNumber}</span>
           <span className="verse">{currentVerse}</span>
@@ -25,8 +24,6 @@ const Quote = ({
             <span className="verse_2 verse">{currentVerse_2}</span>
           </div>
         )}
-
-       
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import Loading from "./Components/Loading";
 import rain_bg from "./rain-gif.webp";
 
 function App() {
+  /* All Quotes Array */
   let randomIndex = Math.floor(Math.random() * Quotes.length);
   let randomVerseName = Quotes[randomIndex].verse_name;
   let randomVerse = Quotes[randomIndex].verse;
@@ -22,12 +23,6 @@ function App() {
     useState(randomVerseNumber);
 
   const getRandomVerse = () => {
-    let randomIndex = Math.floor(Math.random() * Quotes.length);
-    let randomVerseName = Quotes[randomIndex].verse_name;
-    let randomVerse = Quotes[randomIndex].verse;
-    let randomVerse_2 = Quotes[randomIndex].verse_2;
-    let randomVerseNumber = Quotes[randomIndex].verse_number;
-
     setCurrentVerse(randomVerse);
     setCurrentVerseName(randomVerseName);
     setCurrentVerse_2(randomVerse_2);
@@ -58,6 +53,32 @@ function App() {
     navigator.clipboard
       .readText()
       .then((copiedText) => console.log(copiedText));
+  };
+
+  const [currentCategory, setCurrentCategory] = useState();
+
+  let newCategoryArray = Quotes.filter(
+    (quote) => quote.category === currentCategory
+  );
+
+  const changeCategory = (e) => {
+    if (currentCategory !== e.target.value) {
+      let randomIndex = Math.floor(Math.random() * newCategoryArray.length);
+      let randomVerseName = newCategoryArray[randomIndex].verse_name;
+      let randomVerse = newCategoryArray[randomIndex].verse;
+      let randomVerse_2 = newCategoryArray[randomIndex].verse_2;
+      let randomVerseNumber = newCategoryArray[randomIndex].verse_number;
+
+      setCurrentVerse(randomVerse);
+      setCurrentVerseName(randomVerseName);
+      setCurrentVerse_2(randomVerse_2);
+      setCurrentVerseNumber(randomVerseNumber);
+    }
+  };
+
+  const activeCategory = {
+    color: "grey",
+    background: "white",
   };
 
   return (
@@ -116,7 +137,20 @@ function App() {
         </header>
 
         <div className="category-pill-container">
-          <button className="category-pill">Fear</button>
+          <button
+            className="category-pill"
+            value="anxiety"
+            onClick={(e) => {
+              currentCategory === "anxiety"
+                ? setCurrentCategory()
+                : setCurrentCategory("anxiety");
+
+              changeCategory(e);
+            }}
+            style={currentCategory === "anxiety" ? activeCategory : null}
+          >
+            Fear
+          </button>
           <button className="category-pill">Category</button>
           <button className="category-pill">Category</button>
           <button className="category-pill">Category</button>
