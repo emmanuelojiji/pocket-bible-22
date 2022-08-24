@@ -9,6 +9,12 @@ import Loading from "./Components/Loading";
 import rain_bg from "./rain-gif.webp";
 
 function App() {
+  const [currentCategory, setCurrentCategory] = useState("");
+
+  /*useEffect(() => {
+    console.log(currentCategory)
+  })*/
+
   /* All Quotes Array */
   let randomIndex = Math.floor(Math.random() * Quotes.length);
   let randomVerseName = Quotes[randomIndex].verse_name;
@@ -22,11 +28,32 @@ function App() {
   const [currentVerseNumber, setCurrentVerseNumber] =
     useState(randomVerseNumber);
 
-  const getRandomVerse = () => {
-    setCurrentVerse(randomVerse);
-    setCurrentVerseName(randomVerseName);
-    setCurrentVerse_2(randomVerse_2);
-    setCurrentVerseNumber(randomVerseNumber);
+  let newCategoryArray = Quotes.filter(
+    (quote) => quote.category === currentCategory
+  );
+
+  const changeVerse = () => {
+    if (currentCategory === "") {
+      let randomIndex = Math.floor(Math.random() * Quotes.length);
+      let randomVerseName = Quotes[randomIndex].verse_name;
+      let randomVerse = Quotes[randomIndex].verse;
+      let randomVerse_2 = Quotes[randomIndex].verse_2;
+      let randomVerseNumber = Quotes[randomIndex].verse_number;
+      setCurrentVerse(randomVerse);
+      setCurrentVerseName(randomVerseName);
+      setCurrentVerse_2(randomVerse_2);
+      setCurrentVerseNumber(randomVerseNumber);
+    } else {
+      let randomIndex = Math.floor(Math.random() * newCategoryArray.length);
+      let randomVerseName = newCategoryArray[randomIndex].verse_name;
+      let randomVerse = newCategoryArray[randomIndex].verse;
+      let randomVerse_2 = newCategoryArray[randomIndex].verse_2;
+      let randomVerseNumber = newCategoryArray[randomIndex].verse_number;
+      setCurrentVerse(randomVerse);
+      setCurrentVerseName(randomVerseName);
+      setCurrentVerse_2(randomVerse_2);
+      setCurrentVerseNumber(randomVerseNumber);
+    }
   };
 
   useEffect(() => {
@@ -47,33 +74,17 @@ function App() {
     }
   };
 
+  const changeCategory = (e) => {
+    setCurrentCategory(e.target.value);
+    changeVerse();
+  };
+
   const copyVerse = () => {
     navigator.clipboard.writeText(`${currentVerse} - ${currentVerseName}`);
 
     navigator.clipboard
       .readText()
       .then((copiedText) => console.log(copiedText));
-  };
-
-  const [currentCategory, setCurrentCategory] = useState();
-
-  let newCategoryArray = Quotes.filter(
-    (quote) => quote.category === currentCategory
-  );
-
-  const changeCategory = (e) => {
-    if (currentCategory !== e.target.value) {
-      let randomIndex = Math.floor(Math.random() * newCategoryArray.length);
-      let randomVerseName = newCategoryArray[randomIndex].verse_name;
-      let randomVerse = newCategoryArray[randomIndex].verse;
-      let randomVerse_2 = newCategoryArray[randomIndex].verse_2;
-      let randomVerseNumber = newCategoryArray[randomIndex].verse_number;
-
-      setCurrentVerse(randomVerse);
-      setCurrentVerseName(randomVerseName);
-      setCurrentVerse_2(randomVerse_2);
-      setCurrentVerseNumber(randomVerseNumber);
-    }
   };
 
   const activeCategory = {
@@ -141,19 +152,15 @@ function App() {
             className="category-pill"
             value="anxiety"
             onClick={(e) => {
-              currentCategory === "anxiety"
-                ? setCurrentCategory()
-                : setCurrentCategory("anxiety");
-
               changeCategory(e);
+              currentCategory !== e.target.value
+                ? setCurrentCategory(e.target.value)
+                : setCurrentCategory("");
             }}
             style={currentCategory === "anxiety" ? activeCategory : null}
           >
-            Fear
+            anxiety
           </button>
-          <button className="category-pill">Category</button>
-          <button className="category-pill">Category</button>
-          <button className="category-pill">Category</button>
         </div>
 
         <div className="quote-container">
@@ -169,7 +176,7 @@ function App() {
             <div>
               <button
                 className="new-verse-button button-transparent"
-                onClick={() => getRandomVerse()}
+                onClick={() => changeVerse()}
               >
                 New verse
               </button>
@@ -181,7 +188,7 @@ function App() {
 
             <button
               className="button-transparent"
-              onClick={() => getRandomVerse()}
+              onClick={() => changeVerse()}
             >
               Share
             </button>

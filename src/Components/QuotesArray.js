@@ -35,11 +35,13 @@ export const Quotes = [
       "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
     verse_name: "Psalms 34:17",
     verse_number: "17",
+    category:"anxiety"
   },
   {
     verse: "When anxiety was great within me, your consolation brought me joy.",
     verse_name: "Psalms 94:19",
     verse_number: "19",
+    category: "anxiety"
   },
   {
     verse:
@@ -48,12 +50,14 @@ export const Quotes = [
       "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
     verse_name: "Philippians 4:6-7",
     verse_number: "7",
+    category:"anxiety"
   },
   {
     verse:
       "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
     verse_name: "Psalms 34:17",
     verse_number: "17",
+    category:"anxiety"
   },
 
   {
@@ -64,6 +68,41 @@ export const Quotes = [
     category: "anger",
   },
 
+  {
+    verse:
+      "But you, O Lord, are a God merciful and gracious, slow to anger and abounding in steadfast love and faithfulness.",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "anger",
+  },
+  {
+    verse:
+      "But you, O Lord, are a God merciful and gracious, slow to anger and abounding in steadfast love and faithfulness.",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "anger",
+  },
+  {
+    verse:
+      "But you, O Lord, are a God merciful and gracious, slow to anger and abounding in steadfast love and faithfulness.",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "anger",
+  },
+  {
+    verse:
+      "But you, O Lord, are a God merciful and gracious, slow to anger and abounding in steadfast love and faithfulness.",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "anger",
+  },
+  {
+    verse:
+      "But you, O Lord, are a God merciful and gracious, slow to anger and abounding in steadfast love and faithfulness.",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "anger",
+  },
   {
     verse:
       "But you, O Lord, are a God merciful and gracious, slow to anger and abounding in steadfast love and faithfulness.",
