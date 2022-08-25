@@ -1,8 +1,7 @@
-import React from 'react';
-import './App.scss';
-import { useState, useEffect } from 'react';
-import Quote from './Components/Quote';
-import { Quotes } from './Components/QuotesArray';
+import "./App.scss";
+import { useState, useEffect } from "react";
+import Quote from "./Components/Quote";
+import { Quotes } from "./Components/QuotesArray";
 import rain from "./rain.mp3";
 import ocean from "./ocean.mp3";
 import fireplace from "./fireplace.mp3";
@@ -15,6 +14,7 @@ function App() {
   const [currentVerse_2, setCurrentVerse_2] = useState();
   const [currentVerseNumber, setCurrentVerseNumber] = useState();
   const [currentCategory, setCurrentCategory] = useState();
+  
 
   let newCategoryArray = Quotes.filter(
     (quote) => quote.category === currentCategory
@@ -38,9 +38,11 @@ function App() {
     if (currentCategory) generateVerse(currentCategory);
   }, [currentCategory]);
 
+
   useEffect(() => {
     generateVerse();
   }, []);
+
 
   const changeCategory = (e) => {
     if (currentCategory !== e.target.value) {
@@ -48,11 +50,10 @@ function App() {
     } else {
       setCurrentCategory(undefined);
     }
-  };
+
   
-  const activeCategory = {
-    color: 'grey',
-    background: 'white',
+    generateVerse();
+    console.log(`Current category is ${currentCategory}`);
   };
 
   useEffect(() => {
@@ -73,10 +74,31 @@ function App() {
     }
   };
 
+  const copyVerse = () => {
+    navigator.clipboard.writeText(`${currentVerse} - ${currentVerseName}`);
+
+    navigator.clipboard
+      .readText()
+      .then((copiedText) => console.log(copiedText));
+  };
+
+  const activeCategory = {
+    color: "grey",
+    background: "white",
+  };
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        background:
+          currentSound === rain &&
+          `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(${changeBackgroundImage()}`,
+      }}
+    >
+      <Loading />
       <div className="App-container">
-      <header>
+        <header>
           <h4>PocketBible</h4>
 
           <div className="radio-container">
@@ -119,13 +141,15 @@ function App() {
             mute
           </div>
         </header>
+
         <div className="category-pill-container">
           <button
             className="category-pill"
             value="anxiety"
-            style={currentCategory === 'anxiety' ? activeCategory : null}
+            style={currentCategory === "anxiety" ? activeCategory : null}
             onClick={(e) => {
               changeCategory(e);
+              generateVerse();
             }}
           >
             Anxiety
@@ -134,9 +158,10 @@ function App() {
           <button
             className="category-pill"
             value="anger"
-            style={currentCategory === 'anger' ? activeCategory : null}
+            style={currentCategory === "anger" ? activeCategory : null}
             onClick={(e) => {
               changeCategory(e);
+              generateVerse();
             }}
           >
             Anger
@@ -149,15 +174,20 @@ function App() {
             currentVerse_2={currentVerse_2}
             currentVerseName={currentVerseName}
             currentVerseNumber={currentVerseNumber}
+            onClick={copyVerse}
           />
 
           <div className="button-container">
             <div>
               <button
                 className="new-verse-button button-transparent"
-                onClick={() => generateVerse(currentCategory)}
+                onClick={() => generateVerse()}
               >
                 New verse
+              </button>
+
+              <button className="button-transparent" onClick={copyVerse}>
+                Copy verse
               </button>
             </div>
 
