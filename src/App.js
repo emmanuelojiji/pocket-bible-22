@@ -1,8 +1,8 @@
-import React from 'react';
-import './App.scss';
-import { useState, useEffect } from 'react';
-import Quote from './Components/Quote';
-import { Quotes } from './Components/QuotesArray';
+import React from "react";
+import "./App.scss";
+import { useState, useEffect } from "react";
+import Quote from "./Components/Quote";
+import { Quotes } from "./Components/QuotesArray";
 import rain from "./rain.mp3";
 import ocean from "./ocean.mp3";
 import fireplace from "./fireplace.mp3";
@@ -35,7 +35,9 @@ function App() {
   };
 
   useEffect(() => {
-    if (currentCategory) generateVerse(currentCategory);
+    if (currentCategory) {
+      generateVerse(currentCategory);
+    }
   }, [currentCategory]);
 
   useEffect(() => {
@@ -49,10 +51,10 @@ function App() {
       setCurrentCategory(undefined);
     }
   };
-  
+
   const activeCategory = {
-    color: 'grey',
-    background: 'white',
+    color: "grey",
+    background: "white",
   };
 
   useEffect(() => {
@@ -76,7 +78,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-container">
-      <header>
+        <header>
           <h4>PocketBible</h4>
 
           <div className="radio-container">
@@ -123,7 +125,7 @@ function App() {
           <button
             className="category-pill"
             value="anxiety"
-            style={currentCategory === 'anxiety' ? activeCategory : null}
+            style={currentCategory === "anxiety" ? activeCategory : null}
             onClick={(e) => {
               changeCategory(e);
             }}
@@ -134,14 +136,49 @@ function App() {
           <button
             className="category-pill"
             value="anger"
-            style={currentCategory === 'anger' ? activeCategory : null}
+            style={currentCategory === "anger" ? activeCategory : null}
             onClick={(e) => {
               changeCategory(e);
             }}
           >
             Anger
           </button>
+
+          <button
+            className="category-pill"
+            value="lonely"
+            style={currentCategory === "lonely" ? activeCategory : null}
+            onClick={(e) => {
+              changeCategory(e);
+            }}
+          >
+            Lonely
+          </button>
+
+          <button
+            className="category-pill"
+            value="happiness"
+            style={currentCategory === "happiness" ? activeCategory : null}
+            onClick={(e) => {
+              changeCategory(e);
+            }}
+          >
+            Happiness
+          </button>
+
+          <button
+            className="category-pill"
+            value="happiness"
+            style={currentCategory === "happiness" ? activeCategory : null}
+            onClick={(e) => {
+              changeCategory(e);
+            }}
+          >
+            Sadness
+          </button>
         </div>
+
+        
 
         <div className="quote-container">
           <Quote
