@@ -20,6 +20,7 @@
 }
 
 header {
+  width: 100%;
   color: white;
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -94,6 +95,8 @@ footer {
 }
 
 .category-pill-container {
+  display: flex;
+  justify-content: space-between;
   white-space: nowrap;
   overflow-x: scroll;
   width: 100%;

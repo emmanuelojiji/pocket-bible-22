@@ -49,7 +49,8 @@ export const Quotes = [
     verse_2:
       "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
     verse_name: "Philippians 4:6-7",
-    verse_number: "7",
+    verse_number: "6",
+    verse_number_2: "7",
     category:"anxiety"
   },
   {

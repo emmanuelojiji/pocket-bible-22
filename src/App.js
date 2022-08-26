@@ -14,6 +14,7 @@ function App() {
   const [currentVerse, setCurrentVerse] = useState();
   const [currentVerse_2, setCurrentVerse_2] = useState();
   const [currentVerseNumber, setCurrentVerseNumber] = useState();
+  const [currentVerseNumber_2, setCurrentVerseNumber_2] = useState();
   const [currentCategory, setCurrentCategory] = useState();
 
   let newCategoryArray = Quotes.filter(
@@ -27,11 +28,13 @@ function App() {
     let randomVerse = chosenArray[randomIndex].verse;
     let randomVerse_2 = chosenArray[randomIndex].verse_2;
     let randomVerseNumber = chosenArray[randomIndex].verse_number;
+    let randomVerseNumber_2 = chosenArray[randomIndex].verse_number_2;
 
     setCurrentVerseName(randomVerseName);
     setCurrentVerse(randomVerse);
     setCurrentVerse_2(randomVerse_2);
     setCurrentVerseNumber(randomVerseNumber);
+    setCurrentVerseNumber_2(randomVerseNumber_2);
   };
 
   useEffect(() => {
@@ -178,14 +181,13 @@ function App() {
           </button>
         </div>
 
-        
-
         <div className="quote-container">
           <Quote
             currentVerse={currentVerse}
             currentVerse_2={currentVerse_2}
             currentVerseName={currentVerseName}
             currentVerseNumber={currentVerseNumber}
+            currentVerseNumber_2={currentVerseNumber_2}
           />
 
           <div className="button-container">
