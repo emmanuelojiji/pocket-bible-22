@@ -1,15 +1,23 @@
 import React from "react";
-import "./App.scss";
 import { useState, useEffect } from "react";
-import Quote from "./Components/Quote";
+import "./App.scss";
 import { Quotes } from "./Components/QuotesArray";
+import Quote from "./Components/Quote";
 import rain from "./rain.mp3";
 import ocean from "./ocean.mp3";
 import fireplace from "./fireplace.mp3";
-import Loading from "./Components/Loading";
 import rain_bg from "./rain-gif.webp";
+import Loading from "./Components/Loading";
 
 function App() {
+  const [loadingVisible, setLoadingVisible] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadingVisible(false)
+    },9000);
+  })
+
   const [currentVerseName, setCurrentVerseName] = useState();
   const [currentVerse, setCurrentVerse] = useState();
   const [currentVerse_2, setCurrentVerse_2] = useState();
@@ -80,6 +88,7 @@ function App() {
 
   return (
     <div className="App">
+      <Loading loadingVisible={loadingVisible} />
       <div className="App-container">
         <header>
           <h4>PocketBible</h4>
@@ -155,7 +164,7 @@ function App() {
               changeCategory(e);
             }}
           >
-            Lonely
+            Loneliness
           </button>
 
           <button

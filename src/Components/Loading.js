@@ -1,14 +1,14 @@
-import "./Loading.scss"
+import "./Loading.scss";
 
-const Loading = () => {
-
-    
-
-    return(
-        <main>
-            <h1>breathe in</h1>
-        </main>
-    )
-}
+const Loading = ({loadingVisible}) => {
+  return (
+    <main style={{display: loadingVisible ? 'flex' : 'none'}}>
+      <div class="breathe-container">
+        <div className="circle"></div>
+        <span className="breathe">breathe in</span>
+      </div>
+    </main>
+  );
+};
 
 export default Loading;
