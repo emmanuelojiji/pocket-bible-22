@@ -11,12 +11,17 @@ import Loading from "./Components/Loading";
 
 function App() {
   const [loadingVisible, setLoadingVisible] = useState(true);
+  const [loadingText, setLoadingText] = useState("breathe in");
 
   useEffect(() => {
     setTimeout(() => {
-      setLoadingVisible(false)
-    },9000);
-  })
+      setLoadingVisible(false);
+    }, 9000);
+
+    setTimeout(() => {
+      setLoadingText("breathe out");
+    }, 4500);
+  });
 
   const [currentVerseName, setCurrentVerseName] = useState();
   const [currentVerse, setCurrentVerse] = useState();
@@ -88,7 +93,7 @@ function App() {
 
   return (
     <div className="App">
-      <Loading loadingVisible={loadingVisible} />
+      <Loading loadingVisible={loadingVisible} loadingText={loadingText} />
       <div className="App-container">
         <header>
           <h4>PocketBible</h4>

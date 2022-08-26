@@ -1,11 +1,11 @@
 import "./Loading.scss";
 
-const Loading = ({loadingVisible}) => {
+const Loading = ({loadingVisible, loadingText}) => {
   return (
     <main style={{display: loadingVisible ? 'flex' : 'none'}}>
       <div class="breathe-container">
         <div className="circle"></div>
-        <span className="breathe">breathe in</span>
+        <span className="breathe">{loadingText}</span>
       </div>
     </main>
   );
