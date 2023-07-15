@@ -133,8 +133,8 @@ function App() {
 
           <button
             className="category-pill"
-            value="happiness"
-            style={currentCategory === "happiness" ? activeCategory : null}
+            value="sadness"
+            style={currentCategory === "sadness" ? activeCategory : null}
             onClick={(e) => {
               changeCategory(e);
             }}
