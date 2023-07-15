@@ -35,13 +35,13 @@ export const Quotes = [
       "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
     verse_name: "Psalms 34:17",
     verse_number: "17",
-    category:"anxiety"
+    category: "anxiety",
   },
   {
     verse: "When anxiety was great within me, your consolation brought me joy.",
     verse_name: "Psalms 94:19",
     verse_number: "19",
-    category: "anxiety"
+    category: "anxiety",
   },
   {
     verse:
@@ -51,14 +51,14 @@ export const Quotes = [
     verse_name: "Philippians 4:6-7",
     verse_number: "6",
     verse_number_2: "7",
-    category:"anxiety"
+    category: "anxiety",
   },
   {
     verse:
       "The righteous cry out, and the LORD hears them; he delivers them from all their troubles.",
     verse_name: "Psalms 34:17",
     verse_number: "17",
-    category:"anxiety"
+    category: "anxiety",
   },
 
   {
@@ -110,5 +110,29 @@ export const Quotes = [
     verse_name: "Psalms 86:15",
     verse_number: "15",
     category: "anger",
+  },
+  {
+    verse: "lonely 1",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "lonely",
+  },
+  {
+    verse: "lonely 2",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "lonely",
+  },
+  {
+    verse: "happy 2",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "happiness",
+  },
+  {
+    verse: "sad 2",
+    verse_name: "Psalms 86:15",
+    verse_number: "15",
+    category: "sadness",
   },
 ];

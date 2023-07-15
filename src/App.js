@@ -93,7 +93,7 @@ function App() {
 
   return (
     <div className="App">
-      <Loading loadingVisible={loadingVisible} loadingText={loadingText} />
+      {/*<Loading loadingVisible={loadingVisible} loadingText={loadingText} />*/}
       <div className="App-container">
         <header>
           <h4>PocketBible</h4>
