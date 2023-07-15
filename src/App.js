@@ -6,8 +6,8 @@ import Quote from "./Components/Quote";
 import rain from "./rain.mp3";
 import ocean from "./ocean.mp3";
 import fireplace from "./fireplace.mp3";
-import rain_bg from "./rain-gif.webp";
 import Loading from "./Components/Loading";
+import { useRef } from "react";
 
 function App() {
   const [loadingVisible, setLoadingVisible] = useState(true);
@@ -73,23 +73,9 @@ function App() {
     background: "white",
   };
 
-  useEffect(() => {
-    audio.play();
-    audio.loop = true;
-  });
 
-  const [currentSound, setCurrentSound] = useState("");
-  const audio = new Audio(currentSound);
-  const playAudio = (e) => {
-    setCurrentSound(e.target.value);
-    audio.load();
-  };
 
-  const changeBackgroundImage = () => {
-    if (currentSound === rain) {
-      return rain_bg;
-    }
-  };
+  const [currentSound, setCurrentSound] = useState()
 
   return (
     <div className="App">
@@ -98,45 +84,7 @@ function App() {
         <header>
           <h4>PocketBible</h4>
 
-          <div className="radio-container">
-            <input
-              type="radio"
-              value={rain}
-              checked={currentSound === rain}
-              onChange={(e) => {
-                playAudio(e);
-              }}
-            />
-            rain
-            <input
-              type="radio"
-              value={ocean}
-              checked={currentSound === ocean}
-              onChange={(e) => {
-                playAudio(e);
-              }}
-            />
-            ocean
-            <input
-              type="radio"
-              value={fireplace}
-              checked={currentSound === fireplace}
-              onChange={(e) => {
-                playAudio(e);
-              }}
-            />
-            fireplace
-            <input
-              type="radio"
-              value=""
-              checked={currentSound === ""}
-              onChange={(e) => {
-                setCurrentSound(e.target.value);
-                audio.pause();
-              }}
-            />
-            mute
-          </div>
+          
         </header>
         <div className="category-pill-container">
           <button
@@ -217,7 +165,7 @@ function App() {
             <button className="button-transparent">Share</button>
           </div>
         </div>
-        <footer>Built by Sugarcode</footer>
+        <footer>Their Father's Studio</footer>
       </div>
     </div>
   );
